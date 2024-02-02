@@ -1,0 +1,358 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40"><head><meta http-equiv=Content-Type content="text/html; charset=utf-8"><meta name=Generator content="Microsoft Word 15 (filtered medium)"><!--[if !mso]><style>v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style><![endif]--><title>Outlook &quot;Hacks&quot; - a deep dive</title><style><!--
+/* Font Definitions */
+@font-face
+	{font-family:굴림;
+	panose-1:2 11 6 0 0 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"맑은 고딕";
+	panose-1:2 11 5 3 2 0 0 2 0 4;}
+@font-face
+	{font-family:"\@맑은 고딕";}
+@font-face
+	{font-family:"\@굴림";
+	panose-1:2 11 6 0 0 1 1 1 1 1;}
+@font-face
+	{font-family:"TT Norms Pro";
+	panose-1:2 0 0 3 2 0 0 2 0 4;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+p.text-build-content, li.text-build-content, div.text-build-content
+	{mso-style-name:text-build-content;
+	margin-top:9.75pt;
+	margin-right:0cm;
+	margin-bottom:9.75pt;
+	margin-left:0cm;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+span.EmailStyle20
+	{mso-style-type:personal-compose;
+	font-family:"맑은 고딕";
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:3.0cm 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+
+</style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext="edit" spidmax="1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext="edit">
+<o:idmap v:ext="edit" data="1" />
+</o:shapelayout></xml><![endif]--></head>
+
+<body bgcolor=white lang=KO link=blue vlink=purple style='word-wrap:break-word'>
+	<div class=WordSection1>
+		<p class=MsoNormal style='word-break:break-hangul'>
+			<span lang=EN-US style='font-size:10.0pt;font-family:"맑은 고딕"'><o:p>&nbsp;</o:p></span>
+		</p>
+		<div align=center>
+			<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=640 style='width:480.0pt;background:#D2D2D2'>
+				<tr>
+					<td width=640 valign=top style='width:480.0pt;padding:0cm 0cm 0cm 0cm'>
+						<p class=MsoNormal>
+							<span lang=EN-US style='color:black'>
+								<img width=1 height=1 style='width:.0104in;height:.0104in' id="_x0000_i1030" src="https://rdir.inxmail.com/sartorius/d/d.gif?o00kdz2h7776vq0qh0000000000000000000ivoo4dwsyiunm5qbuhq6pby442">
+							</span>
+							<span lang=EN-US><o:p></o:p></span>
+						</p>
+						<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=640 style='width:480.0pt'>
+							<tr style='height:25.5pt'>
+								<td width=640 style='width:480.0pt;background:black;padding:0cm 30.0pt 0cm 30.0pt;height:25.5pt'>
+									<p class=MsoNormal align=right style='mso-margin-top-alt:0cm;margin-right:-18.7pt;margin-bottom:0cm;margin-left:11.0pt;margin-bottom:.0001pt;mso-margin-top-alt:0cm;mso-para-margin-right:-1.7gd;mso-para-margin-bottom:0cm;mso-para-margin-left:1.0gd;mso-para-margin-bottom:.0001pt;text-align:right'>
+										<span lang=EN-US style='font-family:"TT Norms Pro";color:white'>&nbsp;&nbsp;&nbsp;Simplifying Progress</span>
+										<span lang=EN-US style='font-size:12.0pt;font-family:"TT Norms Pro"'><o:p></o:p></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td width=640 valign=top style='width:480.0pt;background:#FEED00;padding:24.75pt 30.0pt 24.75pt 30.0pt;background-position-x:0%;background-position-y:100%'>
+									<p class=MsoNormal style='mso-line-height-alt:0pt'>
+										<span lang=EN-US style='color:black'>
+											<a href="https://www.sartorius.co.kr/" target="_blank">
+												<span style='font-size:13.5pt;font-family:"Arial",sans-serif;color:black;text-decoration:none'>
+													<img border=0 width=184 height=33 style='width:1.9166in;height:.3437in' id="_x0000_i1029" src="https://secure.rabx1.de/templates/sartorius/2018/img/logo_sartorius_2020.png">
+												</span>
+											</a>
+										</span>
+										<span lang=EN-US><o:p></o:p></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td width=640 valign=top style='width:480.0pt;padding:0cm 0cm 0cm 0cm'>
+									<p class=MsoNormal align=center style='text-align:center;mso-line-height-alt:0pt'>
+										<span lang=EN-US><img border=0 width=640 height=160 style='width:6.6666in;height:1.6666in' id="그림_x0020_17" src="cid:image001.jpg@01D9956C.457FA4A0">
+										</span>
+										<span lang=EN-US><o:p></o:p></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td width=640 valign=top style='width:480.0pt;background:black;padding:7.5pt 30.0pt 7.5pt 30.0pt'>
+									<p class=MsoNormal style='line-height:22.5pt'>
+										<span lang=EN-US style='font-size:16.5pt;font-family:"Arial",sans-serif;color:white'>For Internal Use Only
+										</span>
+										<span lang=EN-US><o:p></o:p></span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td width=640 valign=top style='width:480.0pt;background:white;padding:7.5pt 30.0pt 3.75pt 30.0pt'>
+									<p class=MsoNormal style='margin-top:12.0pt;line-height:31.5pt'>
+										<span lang=EN-US style='font-size:26.0pt;font-family:"Arial",sans-serif;color:black'>Weekly Bio News [Week 02]</span><span lang=EN-US style='font-size:26.0pt'><o:p></o:p>
+										</span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td width=640 valign=top style='width:480.0pt;background:white;padding:15.0pt 0cm 20.25pt 0cm'>
+									<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=640 style='width:480.0pt'>
+										<tr>
+											<td width=640 valign=top style='width:480.0pt;padding:0cm 30.0pt 0cm 30.0pt'>
+												<p class=MsoNormal>
+													<span lang=EN-US style='font-size:10.0pt'><o:p>&nbsp;</o:p></span>
+												</p>
+												<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=560 style='width:420.0pt'>
+													<tr>
+														<td width=560 valign=top style='width:420.0pt;padding:0cm 0cm 0cm 0cm'>
+															<p class=text-build-content style='mso-margin-top-alt:7.5pt;margin-right:0cm;margin-bottom:7.5pt;margin-left:0cm'><b>
+																<span lang=EN-US style='font-size:12.0pt;font-family:"Arial",sans-serif'>Industry<o:p></o:p></span></b>
+															</p>
+														
+															<p class=MsoNormal>
+																<span lang=EN-US style='font-family:"맑은 고딕";color:black'>
+																	<a href="https://www.yakup.com/news/index.html?mode=view&amp;cat=16&amp;nid=289230">
+																		<span lang=EN-US style='color:black;text-decoration:none'>
+																			<span lang=EN-US>로슈, 항암제 개발 5년 전략제휴'라이센스 협약</span>
+																		</span>
+																	</a>
+																</span>
+																													
+																<span class=MsoHyperlink>
+																	<span style='color:black;text-decoration:none'><o:p></o:p></span>
+																</span>
+															</p>
+															<p class=MsoNormal>
+																<span lang=EN-US style='font-family:"맑은 고딕";color:black'>
+																	<a href="https://www.yakup.com/news/index.html?mode=view&amp;cat=16&amp;nid=289267">
+																		<span style='color:black;text-decoration:none'>J&amp;J,</span>
+																		<span lang=EN-US style='color:black;text-decoration:none'>
+																			<span lang=EN-US>차세대 항체-약물 결합체 개발 기업 인수</span>
+																		</span>
+																	</a>
+																</span>
+																<span lang=EN-US style='font-family:"맑은 고딕"'><o:p></o:p></span>
+															</p>
+																	
+															<p class=text-build-content style='mso-margin-top-alt:7.5pt;margin-right:0cm;margin-bottom:7.5pt;margin-left:0cm'>
+																<span lang=EN-US style='font-size:10.0pt'><o:p>&nbsp;</o:p></span>
+															</p>
+															
+															<p class=text-build-content style='mso-margin-top-alt:7.5pt;margin-right:0cm;margin-bottom:7.5pt;margin-left:0cm'><b>
+																<span lang=EN-US style='font-size:12.0pt;font-family:"Arial",sans-serif'>Market<o:p></o:p></span></b>
+															</p>
+
+															<p class=MsoNormal>
+																<span lang=EN-US style='font-family:"맑은 고딕";color:black'>
+																	<a href="https://www.hankyung.com/article/202401090630i">
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US>고바이오랩,</span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US>비만치료제</span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US></span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US>핵심균주</span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US></span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US>美</span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US></span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US>특허</span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US></span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US>등록</span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US></span></span>
+																		<span lang=EN-US style='color:black;text-decoration:none'><span lang=EN-US>결정</span></span>
+																	</a>
+																</span>
+															</p>
+																			
+															<p class=MsoNormal>
+																<span lang=EN-US style='font-size:10.0pt;font-family:"맑은 고딕"'><o:p>&nbsp;</o:p></span>
+															</p>
+															
+															<p class=MsoNormal>
+																<span lang=EN-US style='font-size:11.5pt'><br></span>
+																<span lang=EN-US style='font-family:"Arial",sans-serif;color:black'>Best regards<br></span><b>
+																<span lang=EN-US style='font-family:"Arial",sans-serif'>Corporate Marketing<span style='color:black'> Team</span></b>
+																<span lang=EN-US style='font-family:"맑은 고딕";color:black'><o:p></o:p></span>
+															</p>
+														</td>
+													</tr>
+													<tr>
+														<td width=560 valign=top style='width:420.0pt;padding:0cm 0cm 0cm 0cm'>
+															<p class=text-build-content style='mso-margin-top-alt:7.5pt;margin-right:0cm;margin-bottom:7.5pt;margin-left:0cm'><b>
+																<span lang=EN-US style='font-size:12.0pt;font-family:"Arial",sans-serif'><o:p>&nbsp;</o:p></span></b>
+															</p>
+														</td>
+													</tr>
+												</table>
+												<p class=MsoNormal>
+													<span lang=EN-US style='font-size:12.0pt;font-family:굴림'><o:p></o:p></span>
+												</p>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td width=640 valign=top style='width:480.0pt;background:black;padding:7.5pt 30.0pt 3.75pt 30.0pt'>
+									<p class=MsoNormal style='line-height:31.5pt'>		
+										<span lang=EN-US style='font-size:22.5pt;font-family:"Arial",sans-serif;color:white'>Discover our News Links</span>
+										<span lang=EN-US><o:p></o:p></span>
+									</p>
+								</td>
+							</tr>
+							<tr style='height:122.95pt'>
+								<td width=640 valign=top style='width:480.0pt;background:black;padding:15.0pt 0cm 20.25pt 0cm;height:122.lang=EN-US style="font-size:13.5pt;font-family:"Arial",sans-serif'>&nbsp;&nbsp; 
+									<span style='color:black'>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp; 
+									<span style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+									<span style='color:black'>&nbsp;&nbsp;&nbsp;</span> 
+									<span style='color:black'>&nbsp;&nbsp;</span></span>
+									<span lang=EN-US style='font-size:8.0pt;font-family:"Arial",sans-serif'> </span>
+									<span lang=EN-US style='font-size:13.5pt;font-family:"Arial",sans-serif;color:black'>&nbsp;</span>
+									<span lang=EN-US>
+										<a href="https://krsartorius.sharepoint.com/:f:/s/CM2/EkFPaCGAP2ZHia2m-BjUf4MBCLOPu1M0MzA14G72nzAp1w?e=TfenRx" target="_blank">
+											<span style='font-size:13.5pt;font-family:"Arial",sans-serif;color:black;text-decoration:none'>
+												<img border=0 width=162 height=91 style='width:1.6875in;height:.9479in' id="_x0000_i1026" src="https://promotions.sartorius.com/fileadmin/newsletter/bps/Banner_290x163/articlenl.jpg">
+											</span>
+										</a><o:p></o:p>
+									</span>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		
+			<p class=MsoNormal>
+				<span lang=EN-US style='font-family:"Arial",sans-serif;color:white'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Weekly &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Monthly </span>
+				<span lang=EN-US style='font-family:"Arial",sans-serif'><o:p></o:p></span>
+			</p>
+			<p class=MsoNormal style='text-indent:55.0pt'>
+				<span lang=EN-US style='font-family:"Arial",sans-serif;color:white'>Bio News reference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;Company News</span>
+				<span lang=EN-US style='font-size:12.0pt;font-family:굴림'><o:p></o:p></span>
+			</p>
+		</td>
+		/* </tr></table></td></tr></table> */
+	</div>
+				
+				
+				
+				
+				<p class=MsoNormal>
+					<span lang=EN-US><o:p>&nbsp;</o:p></span>
+				</p>
+				<div>
+					<p class=MsoNormal style='background:white'>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+					<div align=center>
+						<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%" style='width:100.0%;border-collapse:collapse'>
+							<tr>
+								<td style='padding:0cm 0cm 0cm 0cm;word-break:break-word'>
+									<div align=center>
+										<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=600 style='width:450.0pt;border-collapse:collapse'>
+											<tr>
+												<td style='padding:0cm 0cm 0cm 0cm'>
+													<div>
+														<div align=center>
+															<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%" style='width:100.0%;border-collapse:collapse'>
+																<tr>
+																	<td style='padding:0cm 0cm 0cm 0cm'>
+																		<div align=center>
+																			<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style="border-collapse:collapse;">
+																				<tr>
+																					<td width=600 valign=top style='width:450.0pt;padding:0cm 0cm 0cm 0cm'>
+																						<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%" style='width:100.0%;border-collapse:collapse'>
+																							<tr>
+																								<td style='padding:0cm 18.75pt 7.5pt 18.75pt'>
+																									<div align=center>
+																										<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 style='border-collapse:collapse'>
+																											<tr>
+																												<td style='border:solid #DADADA 1.0pt;padding:7.5pt 18.75pt 7.5pt 18.75pt'>
+																													<p class=MsoNormal align=center style='text-align:center'>
+																														<span lang=EN-US>
+																															<a href="mailto:marketing@sartorius.co.kr">
+																																<span lang=EN-US style='font-size:10.0pt;font-family:"맑은 고딕";color:windowtext;text-decoration:none'>
+																																	<span lang=EN-US>문의하기</span>
+																																</span>
+																															</a>
+																														</span>
+																														<span lang=EN-US style='font-size:10.0pt;font-family:"맑은 고딕"'><o:p></o:p></span>
+																													</p>
+																												</td>
+																											</tr>
+																										</table>
+																									</div>
+																								</td>
+																							</tr>
+																						</table>
+																					</td>
+																				</tr>
+																			</table>
+																		</div>
+																	</td>
+																</tr>
+															</table>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<p class=MsoNormal style='background:white'>
+						<span lang=EN-US><o:p>&nbsp;</o:p></span>
+					</p>
+					<div align=center>
+						<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%" style='width:100.0%;border-collapse:collapse'>
+							<tr>
+								<td style='padding:0cm 0cm 0cm 0cm;word-break:break-word'>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<p class=MsoNormal>
+					<span lang=EN-US style='color:white'><br></span>
+					<span lang=EN-US>
+						<img border=0 width=1 height=1 style='width:.0104in;height:.0104in' id="_x0000_i1025" src="http://x4nj2.mjt.lu/oo/AU0AAEsnTHwAAAAGkGYAABC25U8AAAAALgoAAOmAABDOGQBiC2Z1gGmaYOYIRdeC0uBxZrzAdwAQfD0/5b96db23/e.gif"><o:p></o:p>
+					</span>
+				</p>
+			</div>
+
+
+</body>
+
+</html>

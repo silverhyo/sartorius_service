@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <style>
+        .silverhyo {
+            width: 0;
+            height: 0;
+        
+        }
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 800px;
+            background-color: white;
+            margin: 100px auto;
+        }
+
+        .box01 {
+            width: 100%;
+            height: 120px;
+            background-color: #FFF100;
+            margin: 0 auto;
+        }
+        .box02 {
+            width: 100%;
+            height: 300px;
+            background-color: black;
+        }
+
+        .accordian {
+            width: 100%;
+        }
+
+        input[id*="answer"] {
+            display: none;
+        }
+
+        input[id*="answer"] + label {
+            display: block;
+            padding: 20px;
+            border: 0px solid red;
+            border-bottom: 0;
+            color: black;
+            font-weight: 800;
+            background-color: #FFF100;
+            cursor: pointer;
+            position: relative;
+        }
+
+        input[id*="answer"] + label + div {
+            max-height: 1px;
+            transition: all .35s;
+            overflow: hidden;
+            background-color: white;
+            font-size: 15px;
+        }
+
+        input[id*="answer"] + label + div > p {
+            display: inline-block;
+            padding: 20px;
+        }
+
+        input[id*="answer"]:checked + label + div {
+            max-height: 300px;
+        }
+
+        .inquire {
+            width: 150px;
+            height: 60px;
+            background-color: white;
+            border-radius: 0%;
+            margin: 50px auto;
+            border: 1px solid lightgray;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        a {
+            font-size: 20px;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .table_container_01 {
+            width: 800px;
+            height: 70px;
+            background-color: black;
+            margin: 100px auto;
+        }
+
+        .table_container_02 {
+            width: 800px;
+            height: 70px;
+            background-color: black;
+            margin: 100px auto;
+        }
+
+
+
+
+    </style>
+
+
+</head>
+<body style="padding: 0; margin: 0;">
+ddddd
+<div class="silverhyo" align="center" style="width: 100px; height: 50px;">
+
+</div>
+
+<div align="center">
+    <table class="table_container_01" style="width: 800px; background-color: black; margin-left: auto; margin-right: auto;">
+        <tr>
+            <td style="color: white; width: 100%; height: 70px; background-color: black;">
+                여기에 입력 하세요
+            </td>
+        </tr>
+    </table>
+
+    <table class="table_container_02" style="width: 800px; background-color: #FFF100; margin: 0px auto;">
+        <tr>
+            <td style="color: black; width: 100%; height: 300px; background-color: #FFF100;">
+                여기에 입력 하세요
+            </td>
+        </tr>
+    </table>
+
+    <table class="table_container_02" style="width: 800px; background-color: white; margin: 0px auto;">
+        <tr>
+            <td style="color: black; width: 100%; height: 100px; background-color: white;">
+                여기에 입력 하세요
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="container">
+        <div class="box01">
+            <img src="">
+        </div>
+        <div class="box02"></div>
+        <div class="box03"></div>
+        
+        
+        
+        <div class="accordian">
+            <input type="checkbox" id="answer01">
+            <label for="answer01">01. Exsim이란 무엇인가요? 
+                <em>
+                    
+                </em>
+            </label>
+            <div>
+                <p>질문에 대한 답변 내용이 이 영역에 들어갑니다.
+                    자연스럽게 나오는 효과를 볼 수 있습니다.
+                </p>
+            </div>
+    
+            
+            <input type="checkbox" id="answer02">
+            <label for="answer02">컨텐츠 제목 부분 
+                <em>
+                    
+                </em>
+            </label>
+            <div>
+                <p>질문에 대한 답변 내용이 이 영역에 들어갑니다.
+                    자연스럽게 나오는 효과를 볼 수 있습니다.
+                </p>
+            </div>
+    
+    
+            <input type="checkbox" id="answer03">
+            <label for="answer03">컨텐츠 제목 부분 
+                <em>
+                    
+                </em>
+            </label>
+            <div>
+                <p>질문에 대한 답변 내용이 이 영역에 들어갑니다.
+                    자연스럽게 나오는 효과를 볼 수 있습니다.
+                </p>
+            </div>
+    
+    
+    
+            <input type="checkbox" id="answer04">
+            <label for="answer04">컨텐츠 제목 부분 
+                <em>
+                    
+                </em>
+            </label>
+            <div>
+                <p>질문에 대한 답변 내용이 이 영역에 들어갑니다.
+                    자연스럽게 나오는 효과를 볼 수 있습니다.
+                </p>
+            </div>
+    
+        
+        </div>
+
+
+        
+        
+        <div class="inquire">
+            <a href="mailto:oliver.choi@sartorius.co.kr">문의하기</a>
+        </div>
+    </div> -->
+
+
+    
+</body>
+</html>

@@ -1,0 +1,199 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 800px;
+    background-color: white;
+    margin: 0px auto;
+}
+
+.box01 {
+    width: 100%;
+    height: 50px;
+    background-color: #FFF100;
+    margin: 0 auto;
+    position: relative;
+}
+.imagelogo {
+    position: absolute;
+    width: 130px;
+    top: 25%;
+    left: 20px;
+
+}
+.box02 {
+    width: 100%;
+    height: 200px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.mainimage {
+    width: 100%;
+    object-fit: scale-down;
+}
+
+
+.textbox01 {
+    width: 100%;
+    height: 20px;
+    font-size: 2em;
+    font-weight: 600;
+    padding:20px;
+}
+.textbox02 {
+    width: 100%;
+    /* height: 50px; */
+    font-size: 0.8em;
+    font-weight: 500;
+    }
+.textbox02 p{
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-left: 20px;
+    padding-right:20px;
+    margin-bottom: 30px;
+}
+
+
+.accordian {
+    width: 100%;
+}
+
+input[id*="answer"] {
+    display: none;
+}
+
+input[id*="answer"] + label {
+    display: block;
+    padding: 15px;
+    border: 0px solid red;
+    border-bottom: 0;
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #FFF100;
+    cursor: pointer;
+    position: relative;
+}
+
+input[id*="answer"] + label + div {
+    max-height: 1px;
+    transition: all .35s;
+    overflow: hidden;
+    background-color: white;
+    font-size: 13px;
+    padding-right: 20px;
+    padding-left: 5px;
+}
+
+input[id*="answer"] + label + div > p {
+    display: inline-block;
+    padding: 20px;
+}
+
+input[id*="answer"]:checked + label + div {
+    max-height: 300px;
+}
+
+#atag {
+    font-size: 13px;
+}
+
+/* ================================================tabel관련 */
+table {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+    border-collapse: collapse;
+    table-layout: auto;
+
+}
+
+th,
+.classfy01 {
+    background-color: lightblue;
+}
+
+th,
+td {
+    border: 1px solid lightgray;
+}
+
+.inquire {
+    width: 120px;
+    height: 40px;
+    background-color: black;
+    border-radius: 0%;
+    margin: 50px auto;
+    border: 0px solid lightgray;
+    text-align: center;
+    line-height: 40px;
+}
+.inquire:hover {
+    width: 120px;
+    height: 40px;
+    background-color: #FFF100;
+    transition: all 0.35s;
+    border-radius: 0%;
+    margin: 50px auto;
+    border: 0px solid lightgray;
+    text-align: center;
+    line-height: 40px;
+}
+
+.inquire > a {
+    font-size: 16px;
+    font-weight: 600;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+.inquire > a:hover {
+    font-size: 16px;
+    font-weight: 600;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+/* ===============================================ENDBOX */
+.endbox {
+    width: 100%;
+    height: 370px;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    align-content: start;
+    padding: 0;
+}
+.sartoriusinfo {
+    border: 0px solid white;
+    width: 380px;
+    /* height: 100px; */
+    margin: 0 auto 0;
+    margin-top: 30px;
+    padding: 0px;
+    padding-left: 20px;
+}
+#eh01 {
+    width: 154px;
+}
+#eh02,
+#eh03 {
+    font-weight: 700;
+    font-size: 14px;
+    border-bottom: 1px solid white;
+}
+.sartoriusid {
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    list-style: none;
+    padding-left: 0;
+}
