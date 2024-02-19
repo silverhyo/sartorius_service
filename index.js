@@ -1,5 +1,5 @@
 const content01 = "EXSIM?";
-const content02 = "안녕하세요? 싸토리우스 입니다. 저희가 제공해 드리고 있는 service 중 EXSIM에 대해서 안내를 드리고자 합니다. 많은 관심 부탁 드리겠습니다."
+const content02 = ""
 const text01 = document.querySelector(".textbox01");
 const text02 = document.querySelector(".textbox02p");
 let i = 0;
